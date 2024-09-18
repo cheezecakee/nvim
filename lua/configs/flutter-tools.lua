@@ -22,7 +22,7 @@ flutter.setup({
             -- Keybindings for LSP actions
             map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", bufopts)
             map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", bufopts)
-            map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", bufopts)
+            map("n", "<F8>", "<cmd>lua vim.lsp.buf.code_action()<CR>", bufopts)
 
             -- Custom Flutter key mappings
             map("n", "<leader>fl", "<cmd>FlutterRun<CR>", bufopts)

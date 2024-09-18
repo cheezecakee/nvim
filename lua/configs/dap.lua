@@ -29,6 +29,7 @@ dap.adapters.go = {
     executable = {
         command = "dlv",
         args = { "dap", "-l", "127.0.0.1:${port}" },
+        detached = false, -- For windows
     },
 }
 
@@ -66,6 +67,7 @@ map("n", "<F3>", dap.step_over)
 map("n", "<F4>", dap.step_out)
 map("n", "<F5>", dap.step_back)
 map("n", "<F13>", dap.restart)
+map("n", "<F6>", dap.toggle_breakpoint)
 
 dap.listeners.before.attach.dapui_config = function()
     ui.open()
