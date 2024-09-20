@@ -6,6 +6,7 @@ local options = {
         cpp = { "clang-format" },
         python = { "black" },
         dart = { "dart_format", "dcm_format" },
+        haskell = { "hindent" },
     },
 
     formatters = {

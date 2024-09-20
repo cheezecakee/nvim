@@ -14,6 +14,7 @@ lspconfig.servers = {
 -- list of servers configured with default config.
 local default_servers = {
     "pyright",
+    "hls",
 }
 
 -- lsps with default config
