@@ -66,6 +66,18 @@ return {
         end,
     },
     {
+        "lukas-reineke/indent-blankline.nvim",
+        tag = "v2.20.8", -- Replace this with the latest v2.x version
+        event = "User FilePost",
+        opts = {
+            char = "│",
+            show_trailing_blankline_indent = false,
+        },
+        config = function(_, opts)
+            require("indent_blankline").setup(opts)
+        end,
+    },
+    {
         "olexsmir/gopher.nvim",
         ft = "go",
         config = function(_, opts)
