@@ -67,7 +67,7 @@ return {
     },
     {
         "lukas-reineke/indent-blankline.nvim",
-        tag = "v2.20.8", -- Replace this with the latest v2.x version
+        -- tag = "v3.09.0", -- Replace this with the latest v2.x version
         event = "User FilePost",
         opts = {
             char = "│",
@@ -129,24 +129,31 @@ return {
     {
         "stevearc/dressing.nvim",
         opts = {},
+        init = function() end,
     },
-    {
-        "shellRaining/hlchunk.nvim",
-        event = { "BufReadPre", "BufNewFile" },
-        config = function()
-            require("configs.hlchunk")
-        end,
-    },
+    -- {
+    --     "shellRaining/hlchunk.nvim",
+    --     event = { "BufReadPre", "BufNewFile" },
+    --     config = function()
+    --         require("configs.hlchunk")
+    --     end,
+    -- },
     {
         "shortcuts/no-neck-pain.nvim",
         event = { "VeryLazy" },
         init = function() end,
         cmd = "NoNeckPain",
     },
+    -- {
+    --     "mrcjkb/haskell-tools.nvim",
+    --     version = "^4", -- Recommended
+    --     lazy = false, -- This plugin is already lazy
+    -- },
     {
-        "mrcjkb/haskell-tools.nvim",
-        version = "^4", -- Recommended
-        lazy = false, -- This plugin is already lazy
+        "nvim-tree/nvim-web-devicons",
+        opts = {},
+        init = function() end,
+        cmd = "",
     },
     -- {
     --     "jackMort/ChatGPT.nvim",

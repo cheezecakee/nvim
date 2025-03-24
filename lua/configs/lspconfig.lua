@@ -14,7 +14,7 @@ lspconfig.servers = {
 -- list of servers configured with default config.
 local default_servers = {
     "pyright",
-    "hls",
+    -- "hls",
 }
 
 -- lsps with default config
@@ -53,7 +53,7 @@ lspconfig.dartls.setup({
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
-    cmd = { "dart", "language-server", "--protocol=lps" },
+    cmd = { "dart", "language-server" },
 })
 
 lspconfig.clangd.setup({

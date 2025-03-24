@@ -15,8 +15,8 @@ local options = {
         "gosum",
         "gotmpl",
         "gowork",
-        "haskell",
-        "haskell_persistent",
+        -- "haskell",
+        -- "haskell_persistent",
         "html",
         "lua",
         "luadoc",
@@ -36,7 +36,7 @@ local options = {
         "vimdoc",
         "xml",
         "yaml",
-        "zig",
+        -- "zig",
     },
 
     highlight = {
