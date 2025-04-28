@@ -14,7 +14,7 @@ local function table_contains(table, value)
 end
 
 -- Build a list of linters to install minus the ignored list.
-local all_linters = {}
+local all_linters = { "eslint-lsp" }
 for _, v in pairs(lint.linters_by_ft) do
     for _, linter in ipairs(v) do
         if not table_contains(ignore_install, linter) then

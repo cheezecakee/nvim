@@ -131,30 +131,35 @@ return {
         opts = {},
         init = function() end,
     },
-    -- {
-    --     "shellRaining/hlchunk.nvim",
-    --     event = { "BufReadPre", "BufNewFile" },
-    --     config = function()
-    --         require("configs.hlchunk")
-    --     end,
-    -- },
+    {
+        "windwp/nvim-ts-autotag",
+        ft = {
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+        },
+        config = function()
+            require("nvim-ts-autotag").setup()
+        end,
+    },
     {
         "shortcuts/no-neck-pain.nvim",
         event = { "VeryLazy" },
         init = function() end,
         cmd = "NoNeckPain",
     },
-    -- {
-    --     "mrcjkb/haskell-tools.nvim",
-    --     version = "^4", -- Recommended
-    --     lazy = false, -- This plugin is already lazy
-    -- },
     {
         "nvim-tree/nvim-web-devicons",
         opts = {},
         init = function() end,
         cmd = "",
     },
+    -- {
+    --     "mrcjkb/haskell-tools.nvim",
+    --     version = "^4", -- Recommended
+    --     lazy = false, -- This plugin is already lazy
+    -- },
     -- {
     --     "jackMort/ChatGPT.nvim",
     --     event = "VeryLazy",
@@ -167,5 +172,12 @@ return {
     --         "folke/trouble.nvim",
     --         "nvim-telescope/telescope.nvim",
     --     },
+    -- },
+    ---- {
+    --     "shellRaining/hlchunk.nvim",
+    --     event = { "BufReadPre", "BufNewFile" },
+    --     config = function()
+    --         require("configs.hlchunk")
+    --     end,
     -- },
 }

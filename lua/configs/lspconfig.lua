@@ -9,6 +9,8 @@ lspconfig.servers = {
     "lua_ls",
     "gopls",
     "clangd",
+    "ts_ls",
+    "tailwindcss",
 }
 
 -- list of servers configured with default config.
@@ -90,4 +92,14 @@ lspconfig.lua_ls.setup({
             },
         },
     },
+})
+
+lspconfig.ts_ls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
+lspconfig.tailwindcss.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
 })
