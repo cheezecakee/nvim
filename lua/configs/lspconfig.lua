@@ -56,6 +56,21 @@ lspconfig.dartls.setup({
     on_init = on_init,
     capabilities = capabilities,
     cmd = { "dart", "language-server" },
+    filetypes = { "dart" },
+    init_options = {
+        onlyAnalyzeProjectsWithOpenFiles = false,
+        suggestFromUnimportedLibraries = true,
+        closingLabels = true,
+        outline = true,
+        flutterOutline = true,
+    },
+    settings = {
+        dart = {
+            completeFunctionCalls = true,
+            showTodos = true,
+            updateImportsOnRename = true,
+        },
+    },
 })
 
 lspconfig.clangd.setup({

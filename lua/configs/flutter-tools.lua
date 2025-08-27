@@ -17,7 +17,7 @@ flutter.setup({
         enabled = false,
     },
     lsp = {
-        on_attach = function(client, bufnr)
+        on_attach = function(_, bufnr)
             local bufopts = { noremap = true, silent = true, buffer = bufnr }
             -- Keybindings for LSP actions
             map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", bufopts)
