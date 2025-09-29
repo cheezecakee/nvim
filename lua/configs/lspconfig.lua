@@ -9,8 +9,10 @@ lspconfig.servers = {
     "lua_ls",
     "gopls",
     "clangd",
+    "svelte",
     "ts_ls",
     "tailwindcss",
+    "omnisharp"  -- Keep only omnisharp, it's better than csharp-language-server
 }
 
 -- list of servers configured with default config.
@@ -87,7 +89,7 @@ lspconfig.lua_ls.setup({
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
-
+    cmd = { "lua-language-server" },
     settings = {
         Lua = {
             diagnostics = {
@@ -117,4 +119,35 @@ lspconfig.ts_ls.setup({
 lspconfig.tailwindcss.setup({
     on_attach = on_attach,
     capabilities = capabilities,
+})
+
+lspconfig.svelte.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
+-- C# Language Server (OmniSharp)
+lspconfig.omnisharp.setup({
+    on_attach = function(client, bufnr)
+        -- Disable formatting since we'll use csharpier via conform
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+        on_attach(client, bufnr)
+    end,
+    on_init = on_init,
+    capabilities = capabilities,
+    cmd = { "OmniSharp" }, -- Mason installs it as "OmniSharp"
+    filetypes = { "cs" },
+    root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj", "omnisharp.json", "function.json"),
+    settings = {
+        FormattingOptions = {
+            EnableEditorConfigSupport = true,
+            OrganizeImports = true,
+        },
+        RoslynExtensionsOptions = {
+            EnableAnalyzersSupport = true,
+            EnableImportCompletion = true,
+            AnalyzeOpenDocumentsOnly = false,
+        },
+    },
 })

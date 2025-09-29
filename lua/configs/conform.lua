@@ -7,6 +7,14 @@ local options = {
         python = { "black" },
         dart = { "dart_format", "dcm_format" },
         haskell = { "hindent" },
+        javascript = { "biome" },
+        javascriptreact = { "biome" },
+        typescript = { "biome" },
+        typescriptreact = { "biome" },
+        json = { "biome" },
+        jsonc = { "biome" },
+        svelte = { "prettier" },
+        cs = { "csharpier" },
     },
 
     formatters = {
@@ -16,6 +24,10 @@ local options = {
         -- golines = {
         --     prepend_args = { "--max-len=80" },
         -- },
+        -- Lua
+        stylua = {
+            command = "stylua", -- Use system binary
+        },
         ["clang-format"] = {
             prepend_args = {
                 "-style={ \
@@ -32,6 +44,10 @@ local options = {
             prepend_args = {
                 "--fast",
             },
+        },
+        -- C#
+        ["csharpier"] = {
+            args = { "format", "--two-stdin" },
         },
     },
 

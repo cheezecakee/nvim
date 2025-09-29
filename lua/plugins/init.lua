@@ -67,8 +67,8 @@ return {
     },
     {
         "lukas-reineke/indent-blankline.nvim",
-        -- tag = "v3.09.0", -- Replace this with the latest v2.x version
-        event = "User FilePost",
+        main = "ibl",
+  event = "User FilePost",
         opts = {
             char = "│",
             show_trailing_blankline_indent = false,
@@ -89,11 +89,10 @@ return {
     },
     {
         "folke/twilight.nvim",
-        opts = {
-            -- your configuration comes here
-        },
-        init = function() end,
-        cmd = { "Twilight" },
+        lazy = false, -- load on startup
+        config = function()
+            require("configs.twilight")
+        end,
     },
     {
         "mfussenegger/nvim-dap",
