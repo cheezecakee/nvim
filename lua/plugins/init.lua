@@ -144,9 +144,13 @@ return {
     },
     {
         "shortcuts/no-neck-pain.nvim",
-        event = { "VeryLazy" },
         init = function() end,
         cmd = "NoNeckPain",
+    },
+    {
+        "nvim-pack/nvim-spectre",
+        init = function() end,
+        cmd = "Spectre",
     },
     {
         "nvim-tree/nvim-web-devicons",
