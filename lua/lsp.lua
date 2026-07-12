@@ -1,5 +1,3 @@
-require("mason").setup()
-
 local key = vim.keymap
 
 key.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })

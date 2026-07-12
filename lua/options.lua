@@ -8,6 +8,18 @@ vim.cmd.colorscheme("catppuccin")
 o.nu = true
 o.relativenumber = true
 
+-- shell --
+if vim.fn.has("win32") == 1 then
+	o.shell = "pwsh"
+	o.shellquote = ""
+	o.shellpipe = "|"
+	o.shellxquote = ""
+	o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+	o.shellredir = "| Out-File -Encoding UTF8"
+else
+	o.shell = "/run/current-system/sw/bin/bash"
+end
+
 -- indentation
 o.tabstop = 4
 o.softtabstop = 4
@@ -54,9 +66,9 @@ o.colorcolumn = "0"
 o.cmdheight = 0
 o.mouse = "a"
 
-vim.api.nvim_create_autocmd("TextYankPost" , {
-    desc = "Hightlight when yanking (copying) text",
-    callback = function()
-        vim.hl.on_yank()
-    end,
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Hightlight when yanking (copying) text",
+	callback = function()
+		vim.hl.on_yank()
+	end,
 })
