@@ -1,13 +1,3 @@
---- mini notify ---
--- require("mini.notify").setup({
--- 	-- only show messages
--- 	content = {
--- 		format = function(notif)
--- 			return notif.msg
--- 		end,
--- 	},
--- })
-
 --- mini cmdline completion ---
 require("mini.cmdline").setup({
 	autocorrect = { enable = false },
