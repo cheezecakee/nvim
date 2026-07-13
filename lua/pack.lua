@@ -52,3 +52,6 @@ require("formatter")
 
 ---- mason ----
 require("mason").setup()
+
+---- quickswitch ----
+require("quickswitch")

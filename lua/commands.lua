@@ -28,6 +28,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+-- install all mason packages listed
 vim.api.nvim_create_user_command("MasonInstallAll", function()
 	local pkg_name = {
 		biomejs = "biome",

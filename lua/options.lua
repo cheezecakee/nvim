@@ -8,6 +8,28 @@ vim.cmd.colorscheme("catppuccin")
 o.nu = true
 o.relativenumber = true
 
+o.guioptions = o.guioptions - { "e" }
+
+function _G.MyTabLine()
+	local s = ""
+	for i = 1, vim.fn.tabpagenr("$") do
+		local winnr = vim.fn.tabpagewinnr(i)
+		local bufnr = vim.fn.tabpagebuflist(i)[winnr]
+		local name = vim.fn.fnamemodify(vim.fn.bufname(bufnr), ":t")
+		if name == "" then
+			name = "[No Name]"
+		end
+
+		s = s .. (i == vim.fn.tabpagenr() and "%#TabLineSel#" or "%#TabLine#")
+		s = s .. "%" .. i .. "T " .. i .. ": " .. name .. " "
+	end
+	s = s .. "%#TabLineFill#"
+	return s
+end
+
+vim.o.tabline = "%!v:lua.MyTabLine()"
+vim.o.showtabline = 2 -- 2 = always show; 1 = only with 2+ tabs (matches earlier default)
+
 -- shell --
 if vim.fn.has("win32") == 1 then
 	o.shell = "pwsh"

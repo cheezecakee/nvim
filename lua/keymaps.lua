@@ -1,7 +1,7 @@
 local key = vim.keymap
 
 -- keymap selected text WITHOUT losing what you wanted
-key.set("x", "p", [[_dp]], { desc = "Past over selection without losing yanked text" })
+key.set("x", "p", [["_dP]], { desc = "Paste over selection without losing yanked text" })
 
 -- Delete text without saving it to any register
 key.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })

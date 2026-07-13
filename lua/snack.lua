@@ -192,7 +192,7 @@ key.set("n", "<leader>tt", function()
 	Snacks.terminal.toggle(nil, { win = { position = "float" } })
 end, { desc = "Open terminal floating window" })
 
--- notify --
+--- notify ---
 key.set("n", "<C-h>", function()
 	Snacks.notifier.hide()
 end, { desc = "Clear notification" })
