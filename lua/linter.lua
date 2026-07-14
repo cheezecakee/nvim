@@ -10,6 +10,7 @@ lint.linters_by_ft = {
 	svelte = { "biomejs" },
 	python = { "pylint" },
 	markdown = { "markdownlint-cli2" },
+    nix = { "statix" },
 }
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {

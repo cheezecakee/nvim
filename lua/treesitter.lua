@@ -8,7 +8,9 @@ local ensure_installed = {
     "http", "dockerfile",
 }
 
-ts.install(ensure_installed)
+if vim.fn.has("win32") == 1 then
+    ts.install(ensure_installed)
+end
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "*",
